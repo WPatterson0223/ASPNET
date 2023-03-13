@@ -16,16 +16,16 @@ namespace Testing.Controllers
         {
             this.repo = repo;
         }
-        
-            
-        
-
-
         // GET: /<controller>/
         public IActionResult Index()
         {
             var products = repo.GetAllProducts();
             return View(products);
+        }
+        public IActionResult ViewProduct(int id)
+        {
+            var product = repo.GetProduct(id);
+            return View(product);
         }
     }
 }

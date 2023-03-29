@@ -7,15 +7,17 @@
 </div>
 
 <table class="table">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Category ID</th>
-        <th>On Sale</th>
-        <th>Stock Level</th>
-    </tr>
-
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category ID</th>
+            <th>On Sale</th>
+            <th>Stock Level</th>
+        </tr>
+    </thead>
+    <tbody>
     @foreach (var product in @Model)
     {
         <tr>
@@ -27,6 +29,58 @@
             <td>@product.StockLevel</td>
         </tr>
     }
-
+</tbody>
 </table>
 
+<style>
+    body{
+        background-color:lightblue;
+        color:blue;
+    }
+    /*table {
+        background-color: blue;
+        color: yellow;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    }
+    td{
+        color: white;
+    }
+    th {
+        color: yellow;
+    }
+    href{
+        color: yellow;
+    }*/
+    .table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+    .table thead tr {
+        background-color: blue;
+        color: yellow;
+        text-align: left;
+    }
+    .table th,
+    .table td {
+        padding: 12px 15px;
+    }
+    .table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+        .table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+    .table tbody tr.active-row {
+        font-weight: bold;
+        color: #009879;
+    }
+</style>
